@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.10;
+pragma solidity ^0.8.10;
 
 // Importamos los contratos del "Banco" (Aave)
 import "aave-v3-core/contracts/flashloan/base/FlashLoanSimpleReceiverBase.sol";
