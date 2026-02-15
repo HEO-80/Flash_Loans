@@ -22,12 +22,13 @@ contract FlashLoanBotTest is Test {
     function testFlashLoan() public {
         // Vamos a pedir 1 MILLÓN de DAI
         uint256 amountToBorrow = 1_000_000 * 1e18; 
-
+       
         // --- PREPARACIÓN DEL TRUCO ---
         // Como nuestro bot aún no gana dinero con arbitraje real,
         // no tiene fondos para pagar la comisión del 0.09% a Aave.
         // Usamos 'deal' para inyectarle 2000 DAI mágicamente y que pueda pagar.
-        deal(DAI, address(bot), 2000 * 1e18);
+        //deal(DAI, address(bot), 2000 * 1e18);
+        deal(DAI, address(bot), 10000 * 1e18);
 
         // Comprobamos que el bot tiene el dinero para la comisión
         uint256 saldoInicial = IERC20(DAI).balanceOf(address(bot));
@@ -36,8 +37,10 @@ contract FlashLoanBotTest is Test {
         // --- MOMENTO DE LA VERDAD ---
         // Ejecutamos la solicitud. Si esto no falla, es que Aave nos prestó el dinero,
         // lo tuvimos en la mano, y lo devolvimos correctamente.
-        bot.solicitarPrestamo(DAI, amountToBorrow);
+        bot.solicitarPrestamo(amountToBorrow);
         
         console.log("EXITO: Prestamo de 1 Millon pedido y devuelto!");
     }
 }
+
+//forge test --match-path test/FlashLoanBot.t.sol -vv --fork-url https://eth-mainnet.g.alchemy.com/v2/xWz8OndQ0A-LfRt8sdxB3
