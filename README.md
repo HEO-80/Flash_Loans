@@ -30,6 +30,11 @@
 ---
 
 ### ⚙️ Arquitectura del Contrato
+
+## ⚙️ Contract Architecture
+
+![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
+
 ```
         TÚ (EOA)
            │
@@ -77,6 +82,11 @@
 | Par por defecto | WETH / DAI |
 
 ---
+
+## 🔄 Execution Flow
+
+![Execution Flow](img/05_execution_flow.svg)
+
 
 ### 📋 Flujo de Ejecución
 
@@ -202,7 +212,10 @@ Los autores no son responsables de pérdidas financieras, incumplimientos regula
 
 ---
 
-### ⚙️ Contract Architecture
+## ⚙️ Contract Architecture
+
+![Architecture](img/04_architecture.svg)
+
 ```
         YOU (EOA)
            │
@@ -234,6 +247,10 @@ Los autores no son responsables de pérdidas financieras, incumplimientos regula
              ▼
         ✅ Profit retained in contract
 ```
+
+## 🔄 Execution Flow
+
+![Execution Flow](img/05_execution_flow.svg)
 
 ---
 
@@ -281,6 +298,12 @@ cast send YOUR_CONTRACT \
   --rpc-url http://localhost:8545 \
   --private-key YOUR_PRIVATE_KEY
 ```
+
+## 📸 Screenshots
+
+| Setup & Build | Test PASS |
+|:---:|:---:|
+| ![Build](img/02_Flash_Loan.png) | ![Test](img/03_Flash_Loan_test.png) |
 
 ---
 
