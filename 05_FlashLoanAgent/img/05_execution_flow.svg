@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06080f"/>
+      <stop offset="100%" style="stop-color:#080d1a"/>
+    </linearGradient>
+    <filter id="g2">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="a1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#10b981"/>
+    </marker>
+    <marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="a4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#b6509e"/>
+    </marker>
+    <marker id="a5" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#f97316"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="620" fill="url(#bg2)" rx="12"/>
+  <g opacity="0.025" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="80" x2="900" y2="80"/><line x1="0" y1="160" x2="900" y2="160"/>
+    <line x1="0" y1="240" x2="900" y2="240"/><line x1="0" y1="320" x2="900" y2="320"/>
+    <line x1="0" y1="400" x2="900" y2="400"/><line x1="0" y1="480" x2="900" y2="480"/>
+    <line x1="0" y1="560" x2="900" y2="560"/>
+    <line x1="450" y1="0" x2="450" y2="620"/>
+  </g>
+
+  <!-- Title -->
+  <text x="450" y="28" text-anchor="middle" fill="#f1f5f9" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="2">⚡ Flash Loan — Execution Flow</text>
+  <text x="450" y="46" text-anchor="middle" fill="#475569" font-family="monospace" font-size="10">Step-by-step · One atomic transaction · One block</text>
+  <line x1="30" y1="54" x2="870" y2="54" stroke="#1e293b" stroke-width="0.5"/>
+
+  <!-- STEP 1 -->
+  <rect x="320" y="68" width="260" height="52" rx="8" fill="#051a0f" stroke="#10b981" stroke-width="1.5" filter="url(#g2)"/>
+  <text x="450" y="89" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="10" font-weight="bold">STEP 1 — YOU CALL</text>
+  <text x="450" y="106" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="9">solicitarPrestamo(WETH, 1_000_000 ETH)</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="450" y1="120" x2="450" y2="148" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#a1)">
+    <animate attributeName="stroke-dashoffset" values="0;-12" dur="0.6s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- STEP 2 -->
+  <rect x="280" y="148" width="340" height="52" rx="8" fill="#0d0520" stroke="#b6509e" stroke-width="1.5" filter="url(#g2)"/>
+  <text x="450" y="169" text-anchor="middle" fill="#b6509e" font-family="monospace" font-size="10" font-weight="bold">STEP 2 — AAVE RECEIVES REQUEST</text>
+  <text x="450" y="186" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="9">POOL.flashLoanSimple() triggered · checks liquidity</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="450" y1="200" x2="450" y2="228" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#a1)">
+    <animate attributeName="stroke-dashoffset" values="0;-12" dur="0.6s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- STEP 3 -->
+  <rect x="260" y="228" width="380" height="52" rx="8" fill="#1a0800" stroke="#f97316" stroke-width="2" filter="url(#g2)">
+    <animate attributeName="stroke-opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="450" y="249" text-anchor="middle" fill="#f97316" font-family="monospace" font-size="10" font-weight="bold">STEP 3 — FUNDS DEPOSITED INTO CONTRACT</text>
+  <text x="450" y="266" text-anchor="middle" fill="#fed7aa" font-family="monospace" font-size="9">Aave sends 1,000,000 WETH to FlashLoanBot ⚡</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="450" y1="280" x2="450" y2="308" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#a1)">
+    <animate attributeName="stroke-dashoffset" values="0;-12" dur="0.6s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- STEP 4 -->
+  <rect x="240" y="308" width="420" height="52" rx="8" fill="#150020" stroke="#ff007a" stroke-width="1.5" filter="url(#g2)"/>
+  <text x="450" y="329" text-anchor="middle" fill="#ff007a" font-family="monospace" font-size="10" font-weight="bold">STEP 4 — executeOperation() CALLBACK</text>
+  <text x="450" y="346" text-anchor="middle" fill="#fda4af" font-family="monospace" font-size="9">Aave auto-calls this · arbitrage logic runs here · Uniswap swap</text>
+
+  <!-- Arrow 4→ DECISION -->
+  <line x1="450" y1="360" x2="450" y2="388" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#a1)">
+    <animate attributeName="stroke-dashoffset" values="0;-12" dur="0.6s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- DECISION diamond -->
+  <polygon points="450,388 560,420 450,452 340,420" fill="#0f1020" stroke="#fbbf24" stroke-width="2">
+    <animate attributeName="stroke-opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite"/>
+  </polygon>
+  <text x="450" y="415" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="10" font-weight="bold">profit ≥ fee?</text>
+  <text x="450" y="430" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="8">amount + 0.09%</text>
+
+  <!-- YES path -->
+  <line x1="560" y1="420" x2="680" y2="420" stroke="#10b981" stroke-width="2" marker-end="url(#a2)"/>
+  <text x="615" y="413" fill="#10b981" font-family="monospace" font-size="9" font-weight="bold">YES ✅</text>
+
+  <rect x="680" y="393" width="185" height="54" rx="8" fill="#051a0f" stroke="#10b981" stroke-width="1.5" filter="url(#g2)"/>
+  <text x="772" y="415" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="10" font-weight="bold">STEP 5A</text>
+  <text x="772" y="431" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="8">approve + repay Aave</text>
+  <text x="772" y="444" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="8">💰 profit stays</text>
+
+  <!-- Arrow YES → success -->
+  <line x1="772" y1="447" x2="772" y2="498" stroke="#10b981" stroke-width="2" marker-end="url(#a2)"/>
+
+  <rect x="680" y="498" width="185" height="54" rx="8" fill="#051a0f" stroke="#10b981" stroke-width="2" filter="url(#g2)">
+    <animate attributeName="opacity" values="1;0.7;1" dur="1.5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="772" y="520" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="11" font-weight="bold">✅ SUCCESS</text>
+  <text x="772" y="537" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="8">tx confirmed on-chain</text>
+  <text x="772" y="550" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="8">profit in contract</text>
+
+  <!-- NO path -->
+  <line x1="340" y1="420" x2="200" y2="420" stroke="#ef4444" stroke-width="2" marker-end="url(#a3)"/>
+  <text x="255" y="413" fill="#ef4444" font-family="monospace" font-size="9" font-weight="bold">NO ❌</text>
+
+  <rect x="35" y="393" width="165" height="54" rx="8" fill="#1c0505" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="117" y="415" text-anchor="middle" fill="#ef4444" font-family="monospace" font-size="10" font-weight="bold">STEP 5B</text>
+  <text x="117" y="431" text-anchor="middle" fill="#fca5a5" font-family="monospace" font-size="8">can't repay amount</text>
+  <text x="117" y="444" text-anchor="middle" fill="#fca5a5" font-family="monospace" font-size="8">+ 0.09% fee</text>
+
+  <!-- Arrow NO → revert -->
+  <line x1="117" y1="447" x2="117" y2="498" stroke="#ef4444" stroke-width="2" marker-end="url(#a3)"/>
+
+  <rect x="35" y="498" width="165" height="54" rx="8" fill="#1c0505" stroke="#ef4444" stroke-width="2">
+    <animate attributeName="opacity" values="1;0.6;1" dur="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="117" y="520" text-anchor="middle" fill="#ef4444" font-family="monospace" font-size="11" font-weight="bold">⏪ REVERT</text>
+  <text x="117" y="537" text-anchor="middle" fill="#fca5a5" font-family="monospace" font-size="8">tx never happened</text>
+  <text x="117" y="550" text-anchor="middle" fill="#fca5a5" font-family="monospace" font-size="8">capital always safe</text>
+
+  <!-- ONE BLOCK bar -->
+  <rect x="30" y="568" width="840" height="36" rx="6" fill="#0a0d18" stroke="#fbbf24" stroke-width="1">
+    <animate attributeName="stroke-opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="450" y="582" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="9" font-weight="bold">⏱ ALL STEPS 1–5 EXECUTE ATOMICALLY INSIDE ONE BLOCK (~12s) · FOUNDRY FORK TEST: [PASS] 1 passed · 0 failed</text>
+  <text x="450" y="597" text-anchor="middle" fill="#78350f" font-family="monospace" font-size="8">forge test --match-path test/FlashLoanBot.t.sol -vv --fork-url ETH_MAINNET</text>
+
+  <!-- Animated particle down the flow -->
+  <circle r="5" fill="#b6509e" opacity="0.9" filter="url(#g2)">
+    <animateMotion dur="4s" repeatCount="indefinite" calcMode="linear">
+      <mpath><path d="M450,68 L450,120 L450,148 L450,200 L450,228 L450,280 L450,308 L450,360 L450,388"/></mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- Footer -->
+  <line x1="30" y1="608" x2="870" y2="608" stroke="#1e293b" stroke-width="0.3"/>
+  <text x="50" y="618" fill="#1e3a5f" font-family="monospace" font-size="8">Aave V3 flashLoanSimple · executeOperation callback · approve+repay pattern · atomic revert on failure</text>
+  <text x="850" y="618" text-anchor="end" fill="#1e3a5f" font-family="monospace" font-size="8">HEO-80</text>
+</svg>
