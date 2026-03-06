@@ -153,7 +153,7 @@ Uniswap V3
 ```
 
 ---
-<div align="center">
+
 ### 🏗️ Estructura del Repositorio
 ```
 Flash_Loans/
@@ -163,7 +163,7 @@ Flash_Loans/
 │   └── test/                   # Tests en entorno fork
 └── README.md
 ```
-</div>
+
 ---
 
 ### 🚀 Despliegue y Pruebas (Fork Environment)
@@ -282,6 +282,7 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
 </div>
+
 ```
         YOU (EOA)
            │
