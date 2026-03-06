@@ -277,10 +277,13 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 3.  Deploy the contract on your local network by passing the Aave V3 `PoolAddressesProvider` address on Ethereum.<div align="center">
 
 ---
-<div align="center">
+
 ## ⚙️ Contract Architecture
+<div align="center">
+
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
+
 </div>
 
 ```
@@ -314,12 +317,15 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
              ▼
         ✅ Profit retained in contract
 ```
-
-<div align="center">
 ## 🔄 Execution Flow
 
+<div align="center">
+
+
 ![Execution Flow](05_FlashLoanAgent/img/05_execution_flow.svg)
+
 </div>
+
 ---
 
 ### 🔬 Technical Specifications
