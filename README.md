@@ -66,6 +66,7 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
 
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
+</div>
 
 ```
         TÚ (EOA)
@@ -98,7 +99,6 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
              ▼
         ✅ Beneficio retenido en el contrato
 ```
-</div>
 ---
 
 ### 🔬 Especificaciones Técnicas
@@ -139,7 +139,6 @@ Aave llama esta función automáticamente tras ingresar los fondos. Aquí es don
 uint256 cantidadADevolver = amount + premium;
 IERC20(asset).approve(address(POOL), cantidadADevolver);
 ```
-
 ---
 
 ### 🛠️ Dependencias
@@ -203,7 +202,6 @@ cast send TU_CONTRATO \
 ```
 
 ---
-<div align="center">
 ### 🗺️ Roadmap
 
 - [x] Receptor base de Flash Loan (Aave V3)
@@ -213,7 +211,7 @@ cast send TU_CONTRATO \
 - [x] Tests automatizados con Foundry en fork
 - [ ] Cálculo de rentabilidad antes de disparar
 - [ ] Integración con el radar off-chain `RealPriceBrain`
-</div>
+
 ---
 
 ### ⚖️ Disclaimer
@@ -231,7 +229,6 @@ Los autores no son responsables de pérdidas financieras, incumplimientos regula
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hectorob/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/HEO-80)
 
----
 ---
 
 ## 🇬🇧 English Version
@@ -284,7 +281,7 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 ## ⚙️ Contract Architecture
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
-
+</div>
 ```
         YOU (EOA)
            │
@@ -316,12 +313,12 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
              ▼
         ✅ Profit retained in contract
 ```
-</div>
+
 <div align="center">
 ## 🔄 Execution Flow
 
 ![Execution Flow](05_FlashLoanAgent/img/05_execution_flow.svg)
-
+</div>
 ---
 
 ### 🔬 Technical Specifications
@@ -335,7 +332,6 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 | Target Network | Ethereum Mainnet |
 | Flash Loan Fee | 0.09% of capital |
 | Default Pair | WETH / DAI |
-</div>
 ---
 
 ### 🚀 Deployment & Testing (Fork Environment)
