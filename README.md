@@ -17,7 +17,6 @@
 
 </div>
 ---
-
 ## 🇪🇸 Versión en Español
 
 ### 🏦 ¿Qué es un Flash Loan? La Analogía del Agente Financiero
@@ -61,8 +60,9 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
 
 
 ---
-<div align="center">
 ### ⚙️ Arquitectura del Contrato
+<div align="center">
+
 
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
