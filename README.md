@@ -1,4 +1,29 @@
-# ⚡ Flash Loan Agent - Receptor de Aave V3 (Solidity)
+# ⚡ Flash Loan Agent — Aave V3 Receiver (Solidity)
+
+<img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white"/>
+<img src="https://img.shields.io/badge/Aave_V3-B6509E?style=for-the-badge&logo=aave&logoColor=white"/>
+<img src="https://img.shields.io/badge/Uniswap_V3-FF007A?style=for-the-badge&logo=uniswap&logoColor=white"/>
+<img src="https://img.shields.io/badge/Foundry-FFCB47?style=for-the-badge&logo=ethereum&logoColor=black"/>
+<img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white"/>
+
+**Smart Contract para solicitar, recibir y gestionar Flash Loans en Aave V3**
+
+*Operación atómica completa: pedir prestado → arbitrar → devolver → beneficio*
+*Todo dentro de un único bloque de transacción.*
+
+**🌍 [English](#-english-version) · 🇪🇸 [Español](#-versión-en-español)**
+
+</div>
+
+---
+
+## 🇪🇸 Versión en Español
+
+### 🏦 ¿Qué es un Flash Loan? La Analogía del Agente Financiero
+
+> **El Agente** *(este contrato)* va al banco central *(Aave)*, pide prestada una suma millonaria **sin dejar ningún aval**, cruza la calle hacia la casa de cambio *(Uniswap)* para ejecutar una operación mercantil, vuelve al banco, devuelve exactamente lo que pidió más una comisión mínima **(0.09%)**, y guarda la ganancia.
+>
+> **La Regla de Oro:** tiene que hacer absolutamente **todo esto antes de que el reloj avance un solo segundo** (dentro de un único bloque). Si no puede devolver el dinero, el banco viaja en el tiempo y actúa como si nunca hubiera ocurrido *(revert)*.
 
 Este repositorio contiene un Smart Contract desarrollado en Solidity diseñado para solicitar, recibir y gestionar préstamos relámpago (Flash Loans) interactuando directamente con el protocolo Aave V3.
 
@@ -33,76 +58,11 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
     ```
 3.  Despliega el contrato en tu red local pasando la dirección del `PoolAddressesProvider` de Aave V3 en Ethereum.
 
----
----
-
-# ⚡ Flash Loan Agent - Aave V3 Receiver (Solidity) [EN]
-
-This repository contains a Smart Contract developed in Solidity designed to request, receive, and manage Flash Loans by interacting directly with the Aave V3 protocol.
-
-## 🛠️ Technical Specifications
-
-The smart contract (`FlashLoanBot.sol`) operates on Solidity version `^0.8.10` and utilizes the Foundry framework.
-
-The contract architecture implements the following features:
-1.  **Protocol Inheritance:** Inherits from `FlashLoanSimpleReceiverBase`, the official base contract of Aave V3. This grants it the native capability to receive delegated loans via the `executeOperation` function.
-2.  **Interface Integration:** Defines the `ISwapRouter` interface to allow cross-communication with exchange protocols (specifically Uniswap V3, using `exactInputSingle`).
-3.  **External Dependencies:** Imports standard libraries from `aave-v3-core` for pool address management and `openzeppelin` for the secure handling of standard ERC20 tokens.
-4.  **Network Configuration (Hardcoded):** Contains constant variables with the real addresses from the Ethereum Mainnet for the Uniswap router, WETH, and DAI.
-5.  **Initialization:** The constructor requires the Aave `PoolAddressesProvider` address at the time of deployment to correctly bind to the main liquidity pool.
-
----
-
-## 🏦 Conceptual Architecture (How to understand it)
-
-To understand the role of this smart contract within the blockchain, we will use the analogy of an express financial agent:
-
-* **The Agent (This Solidity Contract):** Its sole mission is to go to the central bank (Aave), borrow a millionaire sum of money without leaving any collateral, cross the street to the exchange office (Uniswap) to execute a trading operation, return to the bank, repay exactly what it borrowed plus a minimal fee, and keep the profit.
-* **The Golden Rule (Flash Loan):** The technical magic lies in the fact that the Agent has to do absolutely all of this before the bank's clock advances a single second (within a single transaction block). If at the end of the operation it does not have enough money to repay the bank, the bank travels back in time and acts as if the Agent never asked for the money (reverting the entire transaction).
-
-## 🚀 Deployment & Testing (Fork Environment)
-
-Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on the Ethereum Mainnet, testing and development must be done in a forked environment.
-
-1.  Ensure you have Foundry configured in your environment.
-2.  To simulate or test this contract, you need to spin up a local node forking the Mainnet using your Alchemy URL:
-    ```bash
-    anvil --fork-url [https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY](https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY)
-    ```
-3.  Deploy the contract on your local network by passing the Aave V3 `PoolAddressesProvider` address on Ethereum.<div align="center">
-
-# ⚡ Flash Loan Agent — Aave V3 Receiver
-
-<img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white"/>
-<img src="https://img.shields.io/badge/Aave_V3-B6509E?style=for-the-badge&logo=aave&logoColor=white"/>
-<img src="https://img.shields.io/badge/Uniswap_V3-FF007A?style=for-the-badge&logo=uniswap&logoColor=white"/>
-<img src="https://img.shields.io/badge/Foundry-FFCB47?style=for-the-badge&logo=ethereum&logoColor=black"/>
-<img src="https://img.shields.io/badge/Ethereum-3C3C3D?style=for-the-badge&logo=ethereum&logoColor=white"/>
-
-**Smart Contract para solicitar, recibir y gestionar Flash Loans en Aave V3**
-
-*Operación atómica completa: pedir prestado → arbitrar → devolver → beneficio*
-*Todo dentro de un único bloque de transacción.*
-
-**🌍 [English](#-english-version) · 🇪🇸 [Español](#-versión-en-español)**
-
-</div>
-
----
-
-## 🇪🇸 Versión en Español
-
-### 🏦 ¿Qué es un Flash Loan? La Analogía del Agente Financiero
-
-> **El Agente** *(este contrato)* va al banco central *(Aave)*, pide prestada una suma millonaria **sin dejar ningún aval**, cruza la calle hacia la casa de cambio *(Uniswap)* para ejecutar una operación mercantil, vuelve al banco, devuelve exactamente lo que pidió más una comisión mínima **(0.09%)**, y guarda la ganancia.
->
-> **La Regla de Oro:** tiene que hacer absolutamente **todo esto antes de que el reloj avance un solo segundo** (dentro de un único bloque). Si no puede devolver el dinero, el banco viaja en el tiempo y actúa como si nunca hubiera ocurrido *(revert)*.
 
 ---
 
 ### ⚙️ Arquitectura del Contrato
 
-## ⚙️ Contract Architecture
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
 
@@ -156,7 +116,7 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 
 ## 🔄 Execution Flow
 
-![Execution Flow](img/05_execution_flow.svg)
+![Execution Flow](05_FlashLoanAgent/img/05_execution_flow.svg)
 
 
 ### 📋 Flujo de Ejecución
@@ -249,7 +209,7 @@ cast send TU_CONTRATO \
 - [x] Integración de interfaz Uniswap V3
 - [x] Aprobación automática de devolución con fee
 - [ ] Lógica de arbitraje real (WETH → DAI → WETH)
-- [ ] Tests automatizados con Foundry en fork
+- [x] Tests automatizados con Foundry en fork
 - [ ] Cálculo de rentabilidad antes de disparar
 - [ ] Integración con el radar off-chain `RealPriceBrain`
 
@@ -283,9 +243,46 @@ Los autores no son responsables de pérdidas financieras, incumplimientos regula
 
 ---
 
+# ⚡ Flash Loan Agent - Aave V3 Receiver (Solidity) [EN]
+
+This repository contains a Smart Contract developed in Solidity designed to request, receive, and manage Flash Loans by interacting directly with the Aave V3 protocol.
+
+## 🛠️ Technical Specifications
+
+The smart contract (`FlashLoanBot.sol`) operates on Solidity version `^0.8.10` and utilizes the Foundry framework.
+
+The contract architecture implements the following features:
+1.  **Protocol Inheritance:** Inherits from `FlashLoanSimpleReceiverBase`, the official base contract of Aave V3. This grants it the native capability to receive delegated loans via the `executeOperation` function.
+2.  **Interface Integration:** Defines the `ISwapRouter` interface to allow cross-communication with exchange protocols (specifically Uniswap V3, using `exactInputSingle`).
+3.  **External Dependencies:** Imports standard libraries from `aave-v3-core` for pool address management and `openzeppelin` for the secure handling of standard ERC20 tokens.
+4.  **Network Configuration (Hardcoded):** Contains constant variables with the real addresses from the Ethereum Mainnet for the Uniswap router, WETH, and DAI.
+5.  **Initialization:** The constructor requires the Aave `PoolAddressesProvider` address at the time of deployment to correctly bind to the main liquidity pool.
+
+---
+
+## 🏦 Conceptual Architecture (How to understand it)
+
+To understand the role of this smart contract within the blockchain, we will use the analogy of an express financial agent:
+
+* **The Agent (This Solidity Contract):** Its sole mission is to go to the central bank (Aave), borrow a millionaire sum of money without leaving any collateral, cross the street to the exchange office (Uniswap) to execute a trading operation, return to the bank, repay exactly what it borrowed plus a minimal fee, and keep the profit.
+* **The Golden Rule (Flash Loan):** The technical magic lies in the fact that the Agent has to do absolutely all of this before the bank's clock advances a single second (within a single transaction block). If at the end of the operation it does not have enough money to repay the bank, the bank travels back in time and acts as if the Agent never asked for the money (reverting the entire transaction).
+
+## 🚀 Deployment & Testing (Fork Environment)
+
+Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on the Ethereum Mainnet, testing and development must be done in a forked environment.
+
+1.  Ensure you have Foundry configured in your environment.
+2.  To simulate or test this contract, you need to spin up a local node forking the Mainnet using your Alchemy URL:
+    ```bash
+    anvil --fork-url [https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY](https://eth-mainnet.g.alchemy.com/v2/YOUR_API_KEY)
+    ```
+3.  Deploy the contract on your local network by passing the Aave V3 `PoolAddressesProvider` address on Ethereum.<div align="center">
+
+---
+
 ## ⚙️ Contract Architecture
 
-![Architecture](img/04_architecture.svg)
+![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
 
 ```
         YOU (EOA)
@@ -321,7 +318,7 @@ Los autores no son responsables de pérdidas financieras, incumplimientos regula
 
 ## 🔄 Execution Flow
 
-![Execution Flow](img/05_execution_flow.svg)
+![Execution Flow](05_FlashLoanAgent/img/05_execution_flow.svg)
 
 ---
 
@@ -374,7 +371,7 @@ cast send YOUR_CONTRACT \
 
 | Setup & Build | Test PASS |
 |:---:|:---:|
-| ![Build](img/02_Flash_Loan.png) | ![Test](img/03_Flash_Loan_test.png) |
+| ![Build](05_FlashLoanAgent/img/02_Flash_Loan.png) | ![Test](05_FlashLoanAgent/img/03_Flash_Loan_test.png) |
 
 ---
 
