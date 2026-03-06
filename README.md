@@ -1,4 +1,5 @@
-<div aligne="Center">
+<div align="center">
+
 # ⚡ Flash Loan Agent — Aave V3 Receiver (Solidity)
 
 <img src="https://img.shields.io/badge/Solidity-363636?style=for-the-badge&logo=solidity&logoColor=white"/>
@@ -15,7 +16,6 @@
 **🌍 [English](#-english-version) · 🇪🇸 [Español](#-versión-en-español)**
 
 </div>
-
 ---
 
 ## 🇪🇸 Versión en Español
@@ -61,7 +61,7 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
 
 
 ---
-
+<div align="center">
 ### ⚙️ Arquitectura del Contrato
 
 
@@ -98,7 +98,7 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
              ▼
         ✅ Beneficio retenido en el contrato
 ```
-
+</div>
 ---
 
 ### 🔬 Especificaciones Técnicas
@@ -154,7 +154,7 @@ Uniswap V3
 ```
 
 ---
-
+<div align="center">
 ### 🏗️ Estructura del Repositorio
 ```
 Flash_Loans/
@@ -164,7 +164,7 @@ Flash_Loans/
 │   └── test/                   # Tests en entorno fork
 └── README.md
 ```
-
+</div>
 ---
 
 ### 🚀 Despliegue y Pruebas (Fork Environment)
@@ -203,7 +203,7 @@ cast send TU_CONTRATO \
 ```
 
 ---
-
+<div align="center">
 ### 🗺️ Roadmap
 
 - [x] Receptor base de Flash Loan (Aave V3)
@@ -213,7 +213,7 @@ cast send TU_CONTRATO \
 - [x] Tests automatizados con Foundry en fork
 - [ ] Cálculo de rentabilidad antes de disparar
 - [ ] Integración con el radar off-chain `RealPriceBrain`
-
+</div>
 ---
 
 ### ⚖️ Disclaimer
@@ -280,7 +280,7 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 3.  Deploy the contract on your local network by passing the Aave V3 `PoolAddressesProvider` address on Ethereum.<div align="center">
 
 ---
-
+<div align="center">
 ## ⚙️ Contract Architecture
 
 ![Architecture](05_FlashLoanAgent/img/04_architecture.svg)
@@ -316,7 +316,8 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
              ▼
         ✅ Profit retained in contract
 ```
-
+</div>
+<div align="center">
 ## 🔄 Execution Flow
 
 ![Execution Flow](05_FlashLoanAgent/img/05_execution_flow.svg)
@@ -334,7 +335,7 @@ Since this contract interacts with the real Aave V3 and Uniswap V3 addresses on 
 | Target Network | Ethereum Mainnet |
 | Flash Loan Fee | 0.09% of capital |
 | Default Pair | WETH / DAI |
-
+</div>
 ---
 
 ### 🚀 Deployment & Testing (Fork Environment)
@@ -382,7 +383,7 @@ cast send YOUR_CONTRACT \
 - [x] Uniswap V3 interface integration
 - [x] Automatic repayment approval with fee
 - [ ] Real arbitrage logic (WETH → DAI → WETH)
-- [ ] Automated Foundry tests on fork
+- [x] Automated Foundry tests on fork
 - [ ] Profitability check before triggering
 - [ ] Off-chain integration with `RealPriceBrain` radar
 
