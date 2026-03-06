@@ -119,26 +119,6 @@ Dado que este contrato interactúa con las direcciones reales de Aave V3 y Unisw
 
 ![Execution Flow](05_FlashLoanAgent/img/05_execution_flow.svg)
 
-
-### 📋 Flujo de Ejecución
-
-El contrato implementa **dos fases diferenciadas**:
-
-**Fase 1 — Solicitar el préstamo** *(llamada manual)*
-```solidity
-function solicitarPrestamo(address token, uint256 cantidad) external
-```
-Tú llamas esta función desde la terminal. Internamente invoca `POOL.flashLoanSimple()` y le dice a Aave: *"ingresa `cantidad` de `token` en mi contrato ahora mismo"*.
-
-**Fase 2 — Operar y devolver** *(llamada automática de Aave)*
-```solidity
-function executeOperation(...) external override returns (bool)
-```
-Aave llama esta función automáticamente tras ingresar los fondos. Aquí es donde van las operaciones de arbitraje. Al finalizar, el contrato aprueba a Aave para cobrar `amount + premium` y devuelve `true`.
-```solidity
-uint256 cantidadADevolver = amount + premium;
-IERC20(asset).approve(address(POOL), cantidadADevolver);
-```
 ---
 
 ### 🛠️ Dependencias
